@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Swedbank form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-logo">
+        <img alt="Swedbank logo" src="swedbank-logo.svg">
+      </div>
+      <div class="header-name">
+        <h1>Standard credit card application</h1>
+      </div>
+    </header>
+    <div class="progress-bar">
+      <div class="step">
+        <div class="bullet">
+          <span>1</span>
+        </div>
+        <div class="check fas fa-check"></div>
+        <p>Intro</p>
+      </div>
+      <div class="step">
+        <div class="bullet">
+          <span>2</span>
+        </div>
+        <div class="check fas fa-check"></div>
+        <p>First Name</p>
+      </div>
+      <div class="step">
+        <div class="bullet">
+          <span>3</span>
+        </div>
+        <div class="check fas fa-check"></div>
+        <p>Last Name</p>
+      </div>
+      <div class="step">
+        <div class="bullet">
+          <span>4</span>
+        </div>
+        <div class="check fas fa-check"></div>
+        <p>Personal code</p>
+      </div>
+      <div class="step">
+        <div class="bullet">
+          <span>5</span>
+        </div>
+        <div class="check fas fa-check"></div>
+        <p>Delivery address</p>
+      </div>
+      <div class="step">
+        <div class="bullet">
+          <span>6</span>
+        </div>
+        <div class="check fas fa-check"></div>
+        <p>Phone number</p>
+      </div>
+      <div class="step">
+        <div class="bullet">
+          <span>7</span>
+        </div>
+        <div class="check fas fa-check"></div>
+        <p>Summary</p>
+      </div>
+    </div>
+    <div class="form-outer">
+      <form action="#" onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+        <div class="page slide-page">
+          <div class="error hide" id="errorCheck"> <span>*</span>
+            The mandatory information is missing or
+            incorrect!
+          </div>
+          <div class="title">Card conditions</div>
+          <hr />
+          <div class="field">
+            <div class="label">Interest payment day <span>*</span></div>
+            <table>
+              <tr>
+                <td>
+                  <select name="day" id="paymentDay">
+                    <option>2</option>
+                    <option>6</option>
+                    <option>11</option>
+                    <option>16</option>
+                    <option>21</option>
+                    <option>26</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="field">
+            <div class="label">Your monthly salary after taxes <span>*</span> </div>
+            <input class="salary" type="number" name="salary" id="salary">
+            <p class="eu">EUR</p>
+          </div>
+          <div class="field">
+            <div class="label">Do you have obligation outside Swedbank?<span>*</span></div>
+            <label for="myRadioIdYes" class="radio">
+              <input type="radio" name="myRadioField" id="myRadioIdYes" class="radio_input">
+              <div class="radio_radio"></div>
+              Yes
+            </label>
+            <label for="myRadioIdNo" class="radio">
+              <input type="radio" name="myRadioField" id="myRadioIdNo" class="radio_input">
+              <div class="radio_radio"></div>
+              No
+            </label>
+          </div>
+          <div class="field">
+            <button class="firstNext next">Forward <i class="fas fa-angle-double-right"></i></button>
+          </div>
+        </div>
+
+        <div class="page">
+          <div class="field">
+            <div class="label">First Name <span>*</span></div>
+            <input type="text" name="firstName" id="firstName">
+          </div>
+          <div class="field btns">
+            <button class="prev-1 prev"><i class="fas fa-angle-double-left"></i> Back</button>
+            <button class="next-1 next">Forward <i class="fas fa-angle-double-right"></i></button>
+          </div>
+        </div>
+
+        <div class="page">
+          <div class="field">
+            <div class="label">Last Name <span>*</span></div>
+            <input type="text" name="lastName" id="lastName">
+          </div>
+          <div class="field btns">
+            <button class="prev-2 prev"><i class="fas fa-angle-double-left"></i> Back</button>
+            <button class="next-2 next">Forward <i class="fas fa-angle-double-right"></i></button>
+          </div>
+        </div>
+
+        <div class="page">
+          <div class="field">
+            <div class="label">Personal code <span>*</span></div>
+            <input type="number" name="personalCode" id="personalCode">
+          </div>
+          <div class="field btns">
+            <button class="prev-3 prev"><i class="fas fa-angle-double-left"></i> Back</button>
+            <button class="next-3 next">Forward <i class="fas fa-angle-double-right"></i></button>
+          </div>
+        </div>
+
+        <div class="page">
+          <div class="field">
+            <div class="label">Card delivery address <span>*</span></div>
+            <input type="text" name="address" id="address">
+          </div>
+          <div class="field btns">
+            <button class="prev-4 prev"><i class="fas fa-angle-double-left"></i> Back</button>
+            <button class="next-4 next">Forward <i class="fas fa-angle-double-right"></i></button>
+          </div>
+        </div>
+
+        <div class="page">
+          <div class="field">
+            <div class="label">Phone number <span>*</span></div>
+            <input type="number" name="number" id="number">
+          </div>
+          <div class="field btns">
+            <button class="prev-5 prev"><i class="fas fa-angle-double-left"></i> Back</button>
+            <button class="next-5 next">Forward <i class="fas fa-angle-double-right"></i></button>
+          </div>
+        </div>
+        <div class="page">
+          <div class="field btns">
+            <button id="lastBack" class="prev-6 prev"><i class="fas fa-angle-double-left"></i> Back</button>
+            <table class="summary" id="summaryTable">
+              <thead>
+                <tr>
+                  <th>Interest payment day</th>
+                  <th>Your monthly salary after taxes (EUR)</th>
+                  <th>Do you have obligation outside Swedbank?</th>
+                  <th>First name</th>
+                  <th>Last name</th>
+                  <th>Personal code</th>
+                  <th>Card delivery address</th>
+                  <th>Phone number</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <div class="field">
+              <div id="conditions" class="label">Agree with Swedbanks rules and conditions<span>*</span></div>
+              <input id="checkbox" type="checkbox">
+            </div>
+            <button id="submit">Submit<input type="submit" value="Submit"></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
